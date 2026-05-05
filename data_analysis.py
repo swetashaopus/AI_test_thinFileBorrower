@@ -304,11 +304,17 @@ def print_monthly_report(summary: pd.DataFrame):
 # ─────────────────────────────────────────────
 
 def main():
-    DATA_PATH = "/mnt/project/MyTransaction.csv"
-    OUT_IMG   = "/mnt/user-data/outputs/expense_analysis_report.png"
+    from pathlib import Path
+
+    base_dir = Path(__file__).resolve().parent
+    DATA_PATH = base_dir / "MyTransaction.csv"
+    OUT_IMG = base_dir / "expense_analysis_report.png"
 
     print("Loading data …")
-    df = load_and_clean(DATA_PATH)
+    if not DATA_PATH.exists():
+        raise FileNotFoundError(f"Data file not found: {DATA_PATH}")
+
+    df = load_and_clean(str(DATA_PATH))
     df = engineer_features(df)
 
     print(f"  Rows after cleaning : {len(df)}")
