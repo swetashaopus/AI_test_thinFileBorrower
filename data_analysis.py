@@ -304,8 +304,8 @@ def print_monthly_report(summary: pd.DataFrame):
 # ─────────────────────────────────────────────
 
 def main():
-    DATA_PATH = "MyTransaction.csv"
-    OUT_IMG   = "expense_analysis_report.png"
+    DATA_PATH = "/mnt/project/MyTransaction.csv"
+    OUT_IMG   = "/mnt/user-data/outputs/expense_analysis_report.png"
 
     print("Loading data …")
     df = load_and_clean(DATA_PATH)
