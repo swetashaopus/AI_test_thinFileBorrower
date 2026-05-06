@@ -306,8 +306,8 @@ def print_monthly_report(summary: pd.DataFrame):
 
 def main():
     base_dir = Path(__file__).resolve().parent
-    DATA_PATH = base_dir / "MyTransaction.csv"
-    OUT_IMG   = base_dir / "expense_analysis_report.png"
+    DATA_PATH = base_dir / "upiTransaction2022.csv"
+    OUT_IMG   = base_dir / "expense_analysis_report2.png"
 
     print("Loading data …")
     df = load_and_clean(DATA_PATH)
