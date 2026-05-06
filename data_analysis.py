@@ -307,7 +307,7 @@ def main():
     from pathlib import Path
 
     base_dir = Path(__file__).resolve().parent
-    DATA_PATH = base_dir / "MyTransaction.csv"
+    DATA_PATH = base_dir / "upiTransaction2022.csv"
     OUT_IMG = base_dir / "expense_analysis_report.png"
 
     print("Loading data …")
